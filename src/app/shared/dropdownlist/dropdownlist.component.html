@@ -1,0 +1,12 @@
+<div class="dropdownlist {{selected?'selected':''}}">
+  <div *ngFor="let item of listOfLinks" class="dropdownlist-item p-3" (click)="clickLink(item)">
+    <div class="ps-1 pe-1">
+      <div class="pe-3 align-self-center">
+        <div>
+          {{ item.name }}
+        </div>
+      </div>
+      <hr class="m-0" />
+    </div>
+  </div>
+</div>

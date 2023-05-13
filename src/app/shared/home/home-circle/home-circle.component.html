@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-around mb-5 mt-4">
+    <div *ngFor="let c of circles" [style.width.%]="100/(circles.length+0.5)" class="home-circle-item">
+        <a href="{{c.linkSrc}}" style="color:#000d21">
+            <div class="home-circle-item-content">
+                <div style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                    <img class="home-circle-image" src="{{c.imgSrc}}">
+                    <div class="text-center home-circle-item-text">
+                        {{c.text}}
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

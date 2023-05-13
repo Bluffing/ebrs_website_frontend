@@ -1,0 +1,7 @@
+* {
+  color: var(--bs-dark);
+}
+
+b {
+  color: var(--bs-secondary);
+}

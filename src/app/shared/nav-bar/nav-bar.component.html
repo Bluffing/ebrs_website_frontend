@@ -1,0 +1,39 @@
+<div class="nav-container bg-dark noselect">
+  <div class="nav-body flex-fill row">
+
+    <div class="col-2" id="logo"></div>
+
+    <!-- large menu -->
+    <div class="col d-lg-block d-none nav-item p-0" *ngFor="let item of _dropDownList">
+      <div class="nav-link" (click)="clickLink(item)">
+        <span class="text-light">{{item.name}}</span>
+      </div>
+      <div class="position-absolute left-0">
+        <app-dropdownlist [listOfLinks]="item.sublinks" [selected]="item.selected"></app-dropdownlist>
+      </div>
+    </div>
+
+    <!-- hamburger -->
+    <div class="hamburger col d-flex text-light nav-item justify-content-end d-lg-none d-block">
+      <div class="hamburger-display {{_showHamburger?'hamburger-shown':''}} mt-auto mb-auto" (click)="showHamburger()">
+        <div class="hamburger-rest">
+          <i style="font-size: 3em;" class="fa-solid {{!_showHamburger?'fa-bars':'fa-x'}}"></i>
+        </div>
+        <div class="hamburger-hover">
+          <i style="font-size: 3.25em;" class="fa-solid {{!_showHamburger?'fa-bars':'fa-x'}}"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- hamburger items -->
+<div class="hamburger-list {{_showHamburger?'hamburger-shown':''}} position-absolute w-100 d-lg-none d-block"
+  style="z-index: 1000;">
+  <div *ngFor=" let item of _dropDownList" class="hamburger-list-item text-center">
+    <div class="w-100" (click)="clickLink(item)">
+      {{item.name}}
+    </div>
+  </div>
+</div>

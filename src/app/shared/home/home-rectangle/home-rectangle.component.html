@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-between mb-4 mt-4">
+    <div *ngFor="let r of rectangles" [style.width.%]="100/(rectangles.length+0.1)" class="home-rectangle-item">
+        <a href=" {{r.linkSrc}}" style="color:#000d21;">
+            <div class="home-rectangle-item-content">
+                <div style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                    <img class="home-rectangle-image" src="{{r.imgSrc}}">
+                </div>
+                <div style="position: absolute; bottom: 0px; left: 0px; right: 0px;" class="ps-2 bg-secondary">
+                    {{r.text}}
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+export * from './a-propos.component'
+export * from './conseil/conseil.component'
+export * from './faq/faq.component'
+export * from './meditations/meditations.component'
+export * from './mot-pasteur/mot-pasteur.component'
+export * from './reunions/reunions.component'
