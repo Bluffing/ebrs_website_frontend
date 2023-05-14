@@ -2,7 +2,22 @@
     <hr>
     <h1>Calendrier</h1>
 
-    <mwl-calendar-month-view [viewDate]="viewDate" [events]="events">
-    </mwl-calendar-month-view>
+    <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" [cellTemplate]="homeCalendarCell" />
     <hr>
 </div>
+
+<!-- cell template -->
+<ng-template #homeCalendarCell let-day="day" let-openDay="openDay" let-locale="locale"
+    let-tooltipPlacement="tooltipPlacement" let-highlightDay="highlightDay" let-unhighlightDay="unhighlightDay"
+    let-eventClicked="eventClicked" let-tooltipTemplate="tooltipTemplate" let-tooltipAppendToBody="tooltipAppendToBody"
+    let-tooltipDelay="tooltipDelay" let-trackByEventId="trackByEventId" let-validateDrag="validateDrag">
+
+    <div class="home-calendar-cell-container">
+        <div class="home-calendar-cell-date">{{day.date | calendarDate:'monthViewDayNumber':locale }}</div>
+
+        <div *ngFor="let e of day.events" class="home-calendar-cell-event">
+            {{e.title}}
+        </div>
+    </div>
+
+</ng-template>

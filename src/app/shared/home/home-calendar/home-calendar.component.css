@@ -5,3 +5,31 @@
     /* background-color: blueviolet; */
     margin-bottom: 25px;
 }
+
+.home-calendar-cell-container {
+    margin: 3px;
+    max-width: 100%;
+    overflow: hidden;
+
+    .home-calendar-cell-date {
+        width: 100%;
+        text-align: end;
+        font-size: 1.2em;
+    }
+
+    .home-calendar-cell-event {
+        width: 100%;
+        overflow: hidden;
+
+        background-color: lightblue;
+        padding: 2px;
+        padding-left: 4px;
+        margin-bottom: 2px;
+
+        border-radius: 5px;
+    }
+}
+
+::ng-deep .cal-cell {
+    max-width: calc(100%/7);
+}
